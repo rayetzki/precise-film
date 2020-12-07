@@ -1,10 +1,11 @@
 import { render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { AutomaticParameters } from "../automatic";
+import { Automatic } from "./Automatic";
 
 it("Renders automatic component", () => {
-  const { getByText } = render(<AutomaticParameters />, {
+  const { getByText } = render(<Automatic />, {
     wrapper: MemoryRouter,
   });
+
   expect(getByText("Вручную")).toBeInTheDocument();
 });

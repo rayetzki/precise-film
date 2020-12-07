@@ -1,20 +1,10 @@
-import { BrowserRouter as Router } from "react-router-dom";
-import { Route, Switch } from "react-router-dom";
-import { AutomaticParameters, ManualParameters } from "./get-parameters";
+import { Fragment } from "react";
+import AppRouter from "./router";
 
-function App() {
+export default function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact>
-          <AutomaticParameters />
-        </Route>
-        <Route path="/manual">
-          <ManualParameters />
-        </Route>
-      </Switch>
-    </Router>
+    <Fragment>
+      <AppRouter />
+    </Fragment>
   );
 }
-
-export default App;

@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
-import { ManualParameters } from "../manual";
+import { Manual } from "./Manual";
 
 it("Renders manual component", async () => {
-  const { getByText } = render(<ManualParameters />);
+  const { getByText } = render(<Manual />);
   expect(getByText("Вручную")).toBeInTheDocument();
 });

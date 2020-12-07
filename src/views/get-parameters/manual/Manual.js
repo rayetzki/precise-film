@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-export const ManualParameters = () => {
+export const Manual = () => {
   return (
     <Fragment>
       <p>Вручную</p>
