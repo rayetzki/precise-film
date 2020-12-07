@@ -1,10 +1,10 @@
-import { Fragment } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Switch } from "react-router-dom";
 import { AutomaticParameters, ManualParameters } from "./get-parameters";
 
 function App() {
   return (
-    <Fragment>
+    <Router>
       <Switch>
         <Route path="/" exact>
           <AutomaticParameters />
@@ -13,7 +13,7 @@ function App() {
           <ManualParameters />
         </Route>
       </Switch>
-    </Fragment>
+    </Router>
   );
 }
 
