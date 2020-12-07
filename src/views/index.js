@@ -1,3 +1,3 @@
-import { Manual, Automatic } from "./get-parameters";
+import { Manual, Automatic } from "./parameters";
 
 export { Manual, Automatic };
