@@ -1,10 +1,12 @@
 import { Fragment } from "react";
 import AppRouter from "./router";
 
-export default function App() {
+function App() {
   return (
     <Fragment>
       <AppRouter />
     </Fragment>
   );
 }
+
+export default App;

@@ -1,5 +1,5 @@
 import { useCurrentParameters } from "../../../hooks/useCurrentParameters";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, memo, useEffect, useState } from "react";
 import conditionsData from "../../../data/by-conditions";
 
 function SelectISO({ isoList, currentISO, saveParameters }) {
@@ -12,10 +12,10 @@ function SelectISO({ isoList, currentISO, saveParameters }) {
           name="iso"
           placeholder="Задай ISO"
           value={currentISO}
-          onChange={(e) => {
-            setISO(Number(e.target.value));
+          onChange={(event) => {
+            setISO(Number(event.target.value));
             saveParameters({
-              [e.target.name]: Number(e.target.value),
+              [event.target.name]: Number(event.target.value),
             });
           }}
         >
@@ -30,7 +30,7 @@ function SelectISO({ isoList, currentISO, saveParameters }) {
   );
 }
 
-export const Manual = () => {
+export const Manual = memo(() => {
   const { parameters, saveParameters } = useCurrentParameters();
   const [isoList, setExistingISOs] = useState([]);
 
@@ -45,11 +45,14 @@ export const Manual = () => {
   return (
     <Fragment>
       <h1>Вручную</h1>
-      <SelectISO
-        isoList={isoList}
-        currentISO={Number(parameters.iso)}
-        saveParameters={saveParameters}
-      />
+      {!isoList && <p>Loading...</p>}
+      {isoList && (
+        <SelectISO
+          isoList={isoList}
+          currentISO={Number(parameters.iso)}
+          saveParameters={saveParameters}
+        />
+      )}
     </Fragment>
   );
-};
+});

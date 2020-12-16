@@ -10,6 +10,7 @@ const initialValues = {
 afterAll(() => {
   localStorage.clear();
 });
+
 it("Renders a use current params hook", () => {
   const { result } = renderHook(useCurrentParameters);
   expect(result.current.parameters).toStrictEqual(initialValues);

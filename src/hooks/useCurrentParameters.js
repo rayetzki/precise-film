@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 export function useCurrentParameters() {
   const initialParameters = {
@@ -17,11 +17,14 @@ export function useCurrentParameters() {
       : initialParameters
   );
 
-  const saveParameters = (newParameters) => {
-    const freshParameters = { ...parameters, ...newParameters };
-    setParameters(freshParameters);
-    localStorage.setItem("parameters", JSON.stringify(freshParameters));
-  };
+  const saveParameters = useCallback(
+    (newParameters) => {
+      const freshParameters = { ...parameters, ...newParameters };
+      setParameters(freshParameters);
+      localStorage.setItem("parameters", JSON.stringify(freshParameters));
+    },
+    [parameters]
+  );
 
   return {
     parameters,
