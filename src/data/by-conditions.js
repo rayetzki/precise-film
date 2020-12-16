@@ -2,7 +2,7 @@ export default new Map([
   [
     "Яркое солнце",
     {
-      Настройки: [
+      settings: [
         { ISO: 25, Aperture: "1/60", Exposure: "f/16" },
         { ISO: 50, Aperture: "1/125", Exposure: "f/16" },
         { ISO: 100, Aperture: "1/125", Exposure: "f/16" },
@@ -11,13 +11,13 @@ export default new Map([
         { ISO: 800, Aperture: "1/1000", Exposure: "f/16" },
         { ISO: 1600, Aperture: "1/2000", Exposure: "f/16" },
       ],
-      Объекты: ["Море", "Песок", "Солнце", "Облака", "Снег", "Лазурь"],
+      objects: ["Море", "Песок", "Солнце", "Облака", "Снег", "Лазурь"],
     },
   ],
   [
     "Яркое солнце, четкие тени",
     {
-      Настройки: [
+      settings: [
         { ISO: 25, Aperture: "1/60", Exposure: "f/11" },
         { ISO: 50, Aperture: "1/125", Exposure: "f/11" },
         { ISO: 100, Aperture: "1/125", Exposure: "f/11" },
@@ -26,13 +26,13 @@ export default new Map([
         { ISO: 800, Aperture: "1/1000", Exposure: "f/11" },
         { ISO: 1600, Aperture: "1/2000", Exposure: "f/11" },
       ],
-      Объекты: ["Открытый пейзаж", "Дальний вид в горах", "Вид на пляже"],
+      objects: ["Открытый пейзаж", "Дальний вид в горах", "Вид на пляже"],
     },
   ],
   [
     "Боковое или заднее освещение",
     {
-      Настройки: [
+      settings: [
         { ISO: 25, Aperture: "1/60", Exposure: "f/5.6" },
         { ISO: 50, Aperture: "1/125", Exposure: "f/5.6" },
         { ISO: 100, Aperture: "1/125", Exposure: "f/5.6" },
@@ -41,7 +41,7 @@ export default new Map([
         { ISO: 800, Aperture: "1/1000", Exposure: "f/5.6" },
         { ISO: 1600, Aperture: "1/2000", Exposure: "f/5.6" },
       ],
-      Объекты: [
+      objects: [
         "Растения",
         "Играющие дети",
         "Животные в зоопарке",
@@ -53,7 +53,7 @@ export default new Map([
   [
     "Слабое освещение",
     {
-      Настройки: [
+      settings: [
         { ISO: 25, Aperture: "1/60", Exposure: "f/5.6" },
         { ISO: 50, Aperture: "1/125", Exposure: "f/5.6" },
         { ISO: 100, Aperture: "1/125", Exposure: "f/5.6" },
@@ -62,7 +62,7 @@ export default new Map([
         { ISO: 800, Aperture: "1/1000", Exposure: "f/5.6" },
         { ISO: 1600, Aperture: "1/2000", Exposure: "f/5.6" },
       ],
-      Объекты: [
+      objects: [
         "Портрет на улице",
         "Портрет в тени",
         "Портрет в комнате у окна",
@@ -72,7 +72,7 @@ export default new Map([
   [
     "Облачность, теней нет",
     {
-      Настройки: [
+      settings: [
         { ISO: 25, Aperture: "1/60", Exposure: "f/4" },
         { ISO: 50, Aperture: "1/125", Exposure: "f/4" },
         { ISO: 100, Aperture: "1/125", Exposure: "f/4" },
@@ -81,7 +81,7 @@ export default new Map([
         { ISO: 800, Aperture: "1/1000", Exposure: "f/4" },
         { ISO: 1600, Aperture: "1/2000", Exposure: "f/4" },
       ],
-      Объекты: [
+      objects: [
         "Цирк",
         "Театр",
         "Кино",
@@ -93,7 +93,7 @@ export default new Map([
   [
     "Cплошная облачность",
     {
-      Настройки: [
+      settings: [
         { ISO: 25, Aperture: "1/60", Exposure: "f/2" },
         { ISO: 50, Aperture: "1/125", Exposure: "f/2" },
         { ISO: 100, Aperture: "1/125", Exposure: "f/2" },
@@ -102,7 +102,7 @@ export default new Map([
         { ISO: 800, Aperture: "1/1000", Exposure: "f/2" },
         { ISO: 1600, Aperture: "1/2000", Exposure: "f/2" },
       ],
-      Объекты: [
+      objects: [
         "Вечером в городе",
         "Витрины",
         "Сильные прожектора",

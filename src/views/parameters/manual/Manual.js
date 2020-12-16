@@ -1,17 +1,23 @@
+import { useCurrentParameters } from "../../../hooks/useCurrentParameters";
 import { Fragment, useEffect, useState } from "react";
 import conditionsData from "../../../data/by-conditions";
 
-function SelectISO({ isoList }) {
-  const [iso, setIso] = useState(null);
-
+function SelectISO({ isoList, currentISO, saveParameters }) {
+  const [iso, setISO] = useState(currentISO);
   return (
     <Fragment>
       {iso && <p>ISO: {iso}</p>}
       {isoList && (
         <select
-          onChange={(e) => setIso(e.target.value)}
-          placeholder="Задай ISO"
           name="iso"
+          placeholder="Задай ISO"
+          value={currentISO}
+          onChange={(e) => {
+            setISO(Number(e.target.value));
+            saveParameters({
+              [e.target.name]: Number(e.target.value),
+            });
+          }}
         >
           {isoList.map((iso) => (
             <option key={iso} value={iso} label={iso}>
@@ -25,12 +31,13 @@ function SelectISO({ isoList }) {
 }
 
 export const Manual = () => {
+  const { parameters, saveParameters } = useCurrentParameters();
   const [isoList, setExistingISOs] = useState([]);
 
   useEffect(() => {
     const isoSet = new Set();
     conditionsData.forEach((values) =>
-      values.Настройки.map((value) => isoSet.add(value.ISO))
+      values.settings.map((value) => isoSet.add(value.ISO))
     );
     setExistingISOs([...isoSet.values()]);
   }, []);
@@ -38,7 +45,11 @@ export const Manual = () => {
   return (
     <Fragment>
       <h1>Вручную</h1>
-      <SelectISO isoList={isoList} />
+      <SelectISO
+        isoList={isoList}
+        currentISO={Number(parameters.iso)}
+        saveParameters={saveParameters}
+      />
     </Fragment>
   );
 };
