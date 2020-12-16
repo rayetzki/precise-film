@@ -17,14 +17,12 @@ it("Returns weather by coordinates", async () => {
       .mockImplementationOnce((success) => success({ coords })),
   };
   const { result } = renderHook(useCurrentWeather);
-  const { error, weather } = await result.current;
   expect(mockGetWeatherData).toHaveBeenCalledTimes(1);
   expect(mockGetWeatherData).toHaveBeenCalledWith({
     lat: coords.latitude,
     lon: coords.longitude,
   });
-  act(async () => {
-    expect(error).toBeNull();
-    expect(weather).toStrictEqual(apiResponse);
-  });
+  await act(async () => {});
+  expect(result.current.error).toBeNull();
+  expect(result.current.weather).toStrictEqual(apiResponse);
 });
